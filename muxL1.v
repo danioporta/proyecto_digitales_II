@@ -1,8 +1,8 @@
 //se incluye el mux mas pequeño
-//`include "mux2x1.v"
+`include "mux2x1.v"
 //Se crea el mux de 4 entradas (bus de 8 bits cada una) y 2 salidas(bus de 8 bits),con sus respectivos valid tanto en entradas como salidas
 module MuxL1(
-    output  [7:0]Salida0,
+    output [7:0]Salida0,
     output [7:0]Salida1,
     output validSalida0,
     output validSalida1,

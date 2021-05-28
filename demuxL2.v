@@ -1,9 +1,9 @@
-`include "demux2x1.v"
+/*`include "demux2x1.v"*/
 module demuxL2(
     output [7:0]Salida0,
     output [7:0]Salida1,
-    output validSalida0,
-    output validSalida1,
+    input validSalida0,
+    input validSalida1,
     input [7:0]Entrada,
     input validEntrada,
     input selector,

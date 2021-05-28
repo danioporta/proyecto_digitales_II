@@ -1,5 +1,4 @@
-module probador_mux(input [7:0] Salida_estructural,
-                    input [7:0] Salida_condutual,
+module probador_mux(input [7:0] Salida,
 						input validSalida0,
 						input validSalida1,
 						output reg  validEntrada0,
