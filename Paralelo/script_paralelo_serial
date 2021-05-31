@@ -1,0 +1,5 @@
+read_verilog paralelo_serial.v 
+hierarchy -check -top paralelo_serial
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+write_verilog synth_paralelo.v

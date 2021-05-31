@@ -1,5 +1,5 @@
-module probador_paralelo_serial(input out_serial,
-								input data_out_estructural,
+module probador_paralelo_serial(input out_serial_conductual,
+								input out_serial_estructural,
 								output reg clk_4f,
 								output reg reset,
 								output reg valid_in,

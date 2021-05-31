@@ -1,0 +1,17 @@
+all:    yosys sed autoinst iverilog
+
+yosys:
+	yosys -s script_paralelo_serial 
+ 
+sed:   
+	sed -i 's/paralelo_serial/synth_paralelo/' synth_paralelo.v
+    
+	sed -i 's/out_serial_conductual/out_serial_estructural/' synth_paralelo.v
+
+autoinst:    
+	emacs -batch banco_paralelo_serial.v -f verilog-auto -f save-buffer
+
+iverilog:
+	iverilog -o prueba_paralelo.vvp banco_paralelo_serial.v
+	vvp prueba_paralelo.vvp
+	gtkwave paraleloserial.vcd
