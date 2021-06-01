@@ -1,0 +1,13 @@
+all:    yosys sed autoinst
+
+yosys:
+	yosys -s scriptmux 
+ 
+sed:   
+	sed -i 's/muxes/synth/' synth.v
+	sed -i 's/Mux2x1/synth1/' synth.v
+	sed -i 's/MuxL1/synth2/' synth.v
+	sed -i 's/muxL2/synth3/' synth.v
+autoinst:    
+	emacs -batch BancoPruebas_Mux.v -f verilog-auto -f save-buffer
+    
