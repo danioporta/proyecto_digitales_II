@@ -1,0 +1,5 @@
+read_verilog PSRX.v 
+hierarchy -check -top PSRX
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+write_verilog synth_PSRX.v
