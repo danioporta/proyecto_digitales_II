@@ -1,0 +1,17 @@
+all:    yosys sed autoinst iverilog
+
+yosys:
+	yosys -s script_PSRX 
+ 
+sed:   
+	sed -i 's/PSRX/synth_PSRX/' synth_PSRX.v
+    
+	sed -i 's/out_serial2_conductual/out_serial2_estructural/' synth_PSRX.v
+
+autoinst:    
+	emacs -batch banco_PSRX.v -f verilog-auto -f save-buffer
+
+iverilog:
+	iverilog -o Test_PSRX.vvp banco_PSRX.v
+	vvp Test_PSRX.vvp
+	gtkwave paraleloserialrx.vcd
