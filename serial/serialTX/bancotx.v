@@ -18,7 +18,7 @@ module banco_serial_paralelo;
 		wire active_serial_paraleloTX;
 		wire active_serial_paraleloTXs;
 		
-		wire IDLEOuts;
+		wire IDLEOut_sintetizado;
 
 		serialparalelotx serialparalelo(/*AUTOINST*/
 						// Outputs
@@ -34,7 +34,7 @@ module banco_serial_paralelo;
 		
 		sintetizatx s_s_p(/*AUTOINST*/
 				  // Outputs
-				  .IDLEOut_sintetizado	(IDLEOut_sintetizado),
+				  .IDLEOut		(IDLEOut),
 				  .active_serial_paraleloTX_sintetizado(active_serial_paraleloTX_sintetizado),
 				  .data_serial_paraleloTX_sintetizado(data_serial_paraleloTX_sintetizado[7:0]),
 				  // Inputs
@@ -57,6 +57,6 @@ module banco_serial_paralelo;
 						    .active_serial_paraleloTX(active_serial_paraleloTX),
 						    .active_serial_paraleloTX_sintetizado(active_serial_paraleloTX_sintetizado),
 						    .IDLEOut		(IDLEOut),
-						    .IDLEOut_sintetizado(IDLEOut_sintetizado));
+						    .IDLEOut_sintetizado		(IDLEOut_sintetizado));
 
 endmodule 
