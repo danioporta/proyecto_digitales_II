@@ -1,0 +1,19 @@
+all:    yosys sed autoinst	iverilog gtkwave
+
+yosys:
+	yosys -s script_SPTX 
+ 
+sed:   
+	sed -i 's/serialparalelotx/sintetizatx/' sintetizatx.v
+	sed -i 's/data_serial_paraleloTX/data_serial_paraleloTX_sintetizado/' sintetizatx.v
+	sed -i 's/active_serial_paraleloTX/active_serial_paraleloTX_sintetizado/' sintetizatx.v
+	sed -i 's/IDLEOut/IDLEOut_sintetizado/' sintetizatx.v		
+autoinst:    
+	emacs -batch bancotx.v -f verilog-auto -f save-buffer
+
+iverilog:
+	iverilog -o TestSerialTx.vvp bancotx.v
+	vvp TestSerialTx.vvp
+
+gtkwave:
+	gtkwave serial_paraleloTX.vcd
