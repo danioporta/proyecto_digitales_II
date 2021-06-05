@@ -1,5 +1,4 @@
 read_verilog Muxes.v 
-hierarchy -check -top muxes
+hierarchy -check -top Muxes
 proc; opt; fsm; opt; memory; opt
-techmap; opt
 write_verilog synth.v

@@ -1,5 +1,5 @@
-module probador_mux(input [7:0] Salida_estructural,
-                    input [7:0] Salida_condutual,
+module Probador_mux(input [7:0] Salida_estructural,
+                    input [7:0] Salida_conductual,
 						input validSalida0,
 						input validSalida1,
 						output reg  validEntrada0,
@@ -13,8 +13,7 @@ module probador_mux(input [7:0] Salida_estructural,
 						output reg clk_4f,
 						output reg clk_2f,
 						output reg clk_f,
-						output reg reset,
-                        output reg selector);
+						output reg reset);
 	initial begin
 	$dumpfile("muxL2.vcd");
 	$dumpvars;
@@ -24,10 +23,10 @@ module probador_mux(input [7:0] Salida_estructural,
     {Entrada1} <= 8'h00;
     {Entrada2} <= 8'h00;
     {Entrada3} <= 8'h00;
-    selector<=1;
+ 
 	
 	@(posedge clk_2f);
-    selector<=selector+1;
+
  
 	//valid <= 1;
 	//data_in <= 32'hEEFF9900;
@@ -36,7 +35,7 @@ module probador_mux(input [7:0] Salida_estructural,
 	reset <= 1;
     validEntrada0 <= 1;
 	validEntrada1 <= 1;
-    validEntrada2 <= 0;
+    validEntrada2 <= 1;
     validEntrada3 <= 1;
 
 
@@ -45,15 +44,14 @@ module probador_mux(input [7:0] Salida_estructural,
     {Entrada1} <={Entrada1}+1;
     {Entrada2} <=8'hFF;
     {Entrada3} <=8'hFD;
-    @(posedge clk_2f);
-    selector<=selector+1;
+
 
 
 	@(posedge clk_f);
 	validEntrada0 <= 1;
     validEntrada1 <= 1;
     validEntrada2 <= 1;
-    validEntrada3 <= 0;
+    validEntrada3 <= 1;
     
 	 
     
@@ -62,12 +60,11 @@ module probador_mux(input [7:0] Salida_estructural,
     {Entrada2} <={Entrada2}+1;
     {Entrada3} <={Entrada3}+1;
       
-      @(posedge clk_2f);
 
-    selector<=selector+1;
+ 
 
 	@(posedge clk_f);
-	validEntrada0 <= 0;
+	validEntrada0 <= 1;
     validEntrada1 <= 1;
     validEntrada2 <= 1;
     validEntrada3 <= 1;
@@ -78,9 +75,9 @@ module probador_mux(input [7:0] Salida_estructural,
     {Entrada2} <={Entrada2}+1;
     {Entrada3} <={Entrada3}+1;
 
-   @(posedge clk_2f);
 
-    selector<=selector+1;
+
+
     
 	@(posedge clk_f);
 	validEntrada0 <= 1;
@@ -94,11 +91,10 @@ module probador_mux(input [7:0] Salida_estructural,
     {Entrada2} <={Entrada2}+1;
     {Entrada3} <={Entrada3}+1;
 
-    @(posedge clk_2f)
-    selector<=selector+1;
+
 	@(posedge clk_f);
 	validEntrada0 <= 1;
-    validEntrada1 <= 0;
+    validEntrada1 <= 1;
     validEntrada2 <= 1;
     validEntrada3 <= 1;
 
@@ -107,11 +103,11 @@ module probador_mux(input [7:0] Salida_estructural,
     {Entrada1} <={Entrada1}+1;
     {Entrada2} <={Entrada2}+1;
     {Entrada3} <={Entrada3}+1;
-        selector<=selector+1;
+     
 
 	@(posedge clk_f);
 	validEntrada0 <= 1;
-    validEntrada1 <= 0;
+    validEntrada1 <= 1;
     validEntrada2 <= 1;
     validEntrada3 <= 1;
 
@@ -122,7 +118,6 @@ module probador_mux(input [7:0] Salida_estructural,
     {Entrada2} <={Entrada2}+1;
     {Entrada3} <={Entrada3}+1;
 
-	@(posedge clk_f);
 
 	@(posedge clk_f);
 	$finish;
