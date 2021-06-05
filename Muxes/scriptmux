@@ -1,4 +1,8 @@
 read_verilog Muxes.v 
 hierarchy -check -top Muxes
 proc; opt; fsm; opt; memory; opt
+techmap; opt
+abc -liberty cmos_cells.lib
+dfflibmap -liberty cmos_cells.lib
+
 write_verilog synth.v

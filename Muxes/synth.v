@@ -34,7 +34,7 @@ module synth(Salida_estructural, validsalida0, validsalida1, validEntrada0, vali
   (* src = "synth.v:11" *)
   input validEntrada3;
   (* src = "synth.v:6" *)
-  output validsalida0;
+  input validsalida0;
   (* src = "synth.v:7" *)
   output validsalida1;
   (* module_not_derived = 32'd1 *)
@@ -52,10 +52,10 @@ module synth(Salida_estructural, validsalida0, validsalida1, validEntrada0, vali
   (* module_not_derived = 32'd1 *)
   (* src = "synth.v:23" *)
   synth2 muxl1 (
-    .Entrada0(Entrada0),
-    .Entrada1(Entrada1),
-    .Entrada2(Entrada2),
-    .Entrada3(Entrada3),
+    .Entrada0(Entrada2),
+    .Entrada1(Entrada3),
+    .Entrada2(Entrada0),
+    .Entrada3(Entrada1),
     .Salida0(Salida0),
     .Salida1(Salida1),
     .clk_2f(clk_2f),
@@ -75,39 +75,346 @@ module synth1(Salida_estructural, validsalida, Entrada0, Entrada1, validEntrada0
   wire [7:0] _00_;
   (* src = "synth1.v:12" *)
   wire _01_;
-  wire [7:0] _02_;
-  wire [7:0] _03_;
+  (* src = "synth1.v:12" *)
+  wire _02_;
+  (* src = "synth1.v:12" *)
+  wire _03_;
+  (* src = "synth1.v:12" *)
   wire _04_;
-  wire [7:0] _05_;
+  (* src = "synth1.v:12" *)
+  wire _05_;
+  (* src = "synth1.v:12" *)
+  wire _06_;
+  (* src = "synth1.v:12" *)
+  wire _07_;
+  (* src = "synth1.v:12" *)
+  wire _08_;
+  (* src = "synth1.v:12" *)
+  wire _09_;
+  (* src = "synth1.v:12" *)
+  wire _10_;
+  (* src = "synth1.v:4" *)
+  wire _11_;
+  (* src = "synth1.v:4" *)
+  wire _12_;
+  (* src = "synth1.v:4" *)
+  wire _13_;
+  (* src = "synth1.v:4" *)
+  wire _14_;
+  (* src = "synth1.v:4" *)
+  wire _15_;
+  (* src = "synth1.v:4" *)
+  wire _16_;
+  (* src = "synth1.v:4" *)
+  wire _17_;
+  (* src = "synth1.v:4" *)
+  wire _18_;
+  (* src = "synth1.v:5" *)
+  wire _19_;
+  (* src = "synth1.v:5" *)
+  wire _20_;
+  (* src = "synth1.v:5" *)
+  wire _21_;
+  (* src = "synth1.v:5" *)
+  wire _22_;
+  (* src = "synth1.v:5" *)
+  wire _23_;
+  (* src = "synth1.v:5" *)
+  wire _24_;
+  (* src = "synth1.v:5" *)
+  wire _25_;
+  (* src = "synth1.v:5" *)
+  wire _26_;
+  wire _27_;
+  wire _28_;
+  wire _29_;
+  wire _30_;
+  wire _31_;
+  wire _32_;
+  wire _33_;
+  wire _34_;
+  wire _35_;
+  wire _36_;
+  wire _37_;
+  wire _38_;
+  wire _39_;
+  wire _40_;
+  wire _41_;
+  wire _42_;
+  wire _43_;
+  wire _44_;
+  wire _45_;
+  wire _46_;
+  wire _47_;
+  wire _48_;
+  (* src = "synth1.v:9" *)
+  wire _49_;
+  (* src = "synth1.v:11" *)
+  wire _50_;
+  (* src = "synth1.v:6" *)
+  wire _51_;
+  (* src = "synth1.v:7" *)
+  wire _52_;
+  wire [7:0] _53_;
+  wire _54_;
+  wire [7:0] _55_;
+  (* src = "synth1.v:29|mux2x1.v:17|<techmap.v>:432" *)
+  wire [15:0] _56_;
+  (* src = "synth1.v:29|mux2x1.v:17|<techmap.v>:428" *)
+  wire [7:0] _57_;
   (* src = "synth1.v:4" *)
   input [7:0] Entrada0;
   (* src = "synth1.v:5" *)
   input [7:0] Entrada1;
   (* src = "synth1.v:1" *)
   output [7:0] Salida_estructural;
-  reg [7:0] Salida_estructural;
   (* src = "synth1.v:8" *)
   input clk;
   (* src = "synth1.v:9" *)
   input reset;
   (* src = "synth1.v:11" *)
-  reg selector;
+  wire selector;
   (* src = "synth1.v:6" *)
   input validEntrada0;
   (* src = "synth1.v:7" *)
   input validEntrada1;
   (* src = "synth1.v:2" *)
-  output validsalida;
-  always @(posedge clk)
-      selector <= _01_;
-  always @(posedge clk)
-      Salida_estructural <= _00_;
-  assign _02_ = validEntrada0 ? (* full_case = 32'd1 *) (* src = "synth1.v:17" *) Entrada0 : 8'h00;
-  assign _03_ = selector ? (* full_case = 32'd1 *) (* src = "synth1.v:16" *) _05_ : _02_;
-  assign _00_ = reset ? (* full_case = 32'd1 *) (* src = "synth1.v:15" *) _03_ : 8'h00;
-  assign _04_ = selector ? (* full_case = 32'd1 *) (* src = "synth1.v:16" *) 1'h0 : 1'h1;
-  assign _01_ = reset ? (* full_case = 32'd1 *) (* src = "synth1.v:15" *) _04_ : selector;
-  assign _05_ = validEntrada1 ? (* full_case = 32'd1 *) (* src = "synth1.v:25" *) Entrada1 : 8'h00;
+  input validsalida;
+  NOT _58_ (
+    .A(_51_),
+    .Y(_27_)
+  );
+  NOT _59_ (
+    .A(_50_),
+    .Y(_28_)
+  );
+  NAND _60_ (
+    .A(_49_),
+    .B(_52_),
+    .Y(_29_)
+  );
+  NOR _61_ (
+    .A(_28_),
+    .B(_29_),
+    .Y(_30_)
+  );
+  NAND _62_ (
+    .A(_22_),
+    .B(_30_),
+    .Y(_31_)
+  );
+  NAND _63_ (
+    .A(_49_),
+    .B(_28_),
+    .Y(_32_)
+  );
+  NOT _64_ (
+    .A(_32_),
+    .Y(_10_)
+  );
+  NOR _65_ (
+    .A(_27_),
+    .B(_32_),
+    .Y(_33_)
+  );
+  NAND _66_ (
+    .A(_14_),
+    .B(_33_),
+    .Y(_34_)
+  );
+  NAND _67_ (
+    .A(_31_),
+    .B(_34_),
+    .Y(_05_)
+  );
+  NAND _68_ (
+    .A(_23_),
+    .B(_30_),
+    .Y(_35_)
+  );
+  NAND _69_ (
+    .A(_15_),
+    .B(_33_),
+    .Y(_36_)
+  );
+  NAND _70_ (
+    .A(_35_),
+    .B(_36_),
+    .Y(_06_)
+  );
+  NAND _71_ (
+    .A(_24_),
+    .B(_30_),
+    .Y(_37_)
+  );
+  NAND _72_ (
+    .A(_16_),
+    .B(_33_),
+    .Y(_38_)
+  );
+  NAND _73_ (
+    .A(_37_),
+    .B(_38_),
+    .Y(_07_)
+  );
+  NAND _74_ (
+    .A(_25_),
+    .B(_30_),
+    .Y(_39_)
+  );
+  NAND _75_ (
+    .A(_17_),
+    .B(_33_),
+    .Y(_40_)
+  );
+  NAND _76_ (
+    .A(_39_),
+    .B(_40_),
+    .Y(_08_)
+  );
+  NAND _77_ (
+    .A(_26_),
+    .B(_30_),
+    .Y(_41_)
+  );
+  NAND _78_ (
+    .A(_18_),
+    .B(_33_),
+    .Y(_42_)
+  );
+  NAND _79_ (
+    .A(_41_),
+    .B(_42_),
+    .Y(_09_)
+  );
+  NAND _80_ (
+    .A(_19_),
+    .B(_30_),
+    .Y(_43_)
+  );
+  NAND _81_ (
+    .A(_11_),
+    .B(_33_),
+    .Y(_44_)
+  );
+  NAND _82_ (
+    .A(_43_),
+    .B(_44_),
+    .Y(_02_)
+  );
+  NAND _83_ (
+    .A(_12_),
+    .B(_33_),
+    .Y(_45_)
+  );
+  NAND _84_ (
+    .A(_20_),
+    .B(_30_),
+    .Y(_46_)
+  );
+  NAND _85_ (
+    .A(_45_),
+    .B(_46_),
+    .Y(_03_)
+  );
+  NAND _86_ (
+    .A(_13_),
+    .B(_33_),
+    .Y(_47_)
+  );
+  NAND _87_ (
+    .A(_21_),
+    .B(_30_),
+    .Y(_48_)
+  );
+  NAND _88_ (
+    .A(_47_),
+    .B(_48_),
+    .Y(_04_)
+  );
+  (* src = "synth1.v:12" *)
+  DFF _89_ (
+    .C(clk),
+    .D(_01_),
+    .Q(selector)
+  );
+  (* src = "synth1.v:12" *)
+  DFF _90_ (
+    .C(clk),
+    .D(_00_[0]),
+    .Q(Salida_estructural[0])
+  );
+  (* src = "synth1.v:12" *)
+  DFF _91_ (
+    .C(clk),
+    .D(_00_[1]),
+    .Q(Salida_estructural[1])
+  );
+  (* src = "synth1.v:12" *)
+  DFF _92_ (
+    .C(clk),
+    .D(_00_[2]),
+    .Q(Salida_estructural[2])
+  );
+  (* src = "synth1.v:12" *)
+  DFF _93_ (
+    .C(clk),
+    .D(_00_[3]),
+    .Q(Salida_estructural[3])
+  );
+  (* src = "synth1.v:12" *)
+  DFF _94_ (
+    .C(clk),
+    .D(_00_[4]),
+    .Q(Salida_estructural[4])
+  );
+  (* src = "synth1.v:12" *)
+  DFF _95_ (
+    .C(clk),
+    .D(_00_[5]),
+    .Q(Salida_estructural[5])
+  );
+  (* src = "synth1.v:12" *)
+  DFF _96_ (
+    .C(clk),
+    .D(_00_[6]),
+    .Q(Salida_estructural[6])
+  );
+  (* src = "synth1.v:12" *)
+  DFF _97_ (
+    .C(clk),
+    .D(_00_[7]),
+    .Q(Salida_estructural[7])
+  );
+  assign _49_ = reset;
+  assign _00_[3] = _05_;
+  assign _00_[4] = _06_;
+  assign _00_[5] = _07_;
+  assign _00_[6] = _08_;
+  assign _00_[7] = _09_;
+  assign _01_ = _10_;
+  assign _19_ = Entrada1[0];
+  assign _52_ = validEntrada1;
+  assign _20_ = Entrada1[1];
+  assign _21_ = Entrada1[2];
+  assign _22_ = Entrada1[3];
+  assign _23_ = Entrada1[4];
+  assign _24_ = Entrada1[5];
+  assign _25_ = Entrada1[6];
+  assign _26_ = Entrada1[7];
+  assign _11_ = Entrada0[0];
+  assign _51_ = validEntrada0;
+  assign _12_ = Entrada0[1];
+  assign _13_ = Entrada0[2];
+  assign _14_ = Entrada0[3];
+  assign _15_ = Entrada0[4];
+  assign _16_ = Entrada0[5];
+  assign _17_ = Entrada0[6];
+  assign _18_ = Entrada0[7];
+  assign _00_[0] = _02_;
+  assign _00_[1] = _03_;
+  assign _00_[2] = _04_;
+  assign _50_ = selector;
 endmodule
 
 (* src = "synth2.v:4" *)
@@ -137,7 +444,7 @@ module synth2(Salida0, Salida1, validsalida0, validsalida1, Entrada0, Entrada1, 
   (* src = "synth2.v:16" *)
   input validEntrada3;
   (* src = "synth2.v:7" *)
-  output validsalida0;
+  input validsalida0;
   (* src = "synth2.v:8" *)
   output validsalida1;
   (* module_not_derived = 32'd1 *)
@@ -183,7 +490,7 @@ module synth3(Salida_estructural, validsalida, Entrada0, Entrada1, validEntrada0
   (* src = "synth3.v:11" *)
   input validEntrada1;
   (* src = "synth3.v:7" *)
-  output validsalida;
+  input validsalida;
   (* module_not_derived = 32'd1 *)
   (* src = "synth3.v:15" *)
   synth1 mux1 (

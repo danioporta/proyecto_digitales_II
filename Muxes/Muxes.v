@@ -3,7 +3,7 @@
 `include "muxL1.v"
 module Muxes(
                         output  [7:0]Salida_conductual,
-					    output validsalida0,
+					    input validsalida0,
 						output validsalida1,
 						input validEntrada0,
                         input validEntrada1,
@@ -28,10 +28,10 @@ module Muxes(
     .validEntrada1(validEntrada1),
      .validEntrada2(validEntrada2),
     .validEntrada3(validEntrada3),
-    .Entrada0(Entrada0[7:0]), 
-    .Entrada1(Entrada1[7:0]), 
-    .Entrada2(Entrada2[7:0]), 
-    .Entrada3(Entrada3[7:0]), 
+    .Entrada0(Entrada2[7:0]), 
+    .Entrada1(Entrada3[7:0]), 
+    .Entrada2(Entrada0[7:0]), 
+    .Entrada3(Entrada1[7:0]), 
     .Salida0(Salida0[7:0]),
     .Salida1(Salida1[7:0]));
 

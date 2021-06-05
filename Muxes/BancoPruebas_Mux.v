@@ -7,7 +7,7 @@
 /*`include "muxL2.v"*/
 `include "synth.v"
 
-/*`include "../lib/cmos_cells.v"*/
+`include "cmos_cells.v"
 
 module banco_mux;
 
@@ -21,9 +21,9 @@ module banco_mux;
         Muxes muxes1(/*AUTOINST*/
 		     // Outputs
 		     .Salida_conductual	(Salida_conductual[7:0]),
-		     .validsalida0	(validsalida0),
 		     .validsalida1	(validsalida1),
 		     // Inputs
+		     .validsalida0	(validsalida0),
 		     .validEntrada0	(validEntrada0),
 		     .validEntrada1	(validEntrada1),
 		     .validEntrada2	(validEntrada2),
@@ -43,7 +43,6 @@ module banco_mux;
           /*AUTOINST*/
 		     // Outputs
 		     .Salida_estructural(Salida_estructural[7:0]),
-		     .validsalida0	(validsalida0),
 		     .validsalida1	(validsalida1),
 		     // Inputs
 		     .Entrada0		(Entrada0[7:0]),
@@ -57,10 +56,13 @@ module banco_mux;
 		     .validEntrada0	(validEntrada0),
 		     .validEntrada1	(validEntrada1),
 		     .validEntrada2	(validEntrada2),
-		     .validEntrada3	(validEntrada3));
+		     .validEntrada3	(validEntrada3),
+		     .validsalida0	(validsalida0));
 
     Probador_mux probador(/*AUTOINST*/
 			  // Outputs
+			  .validSalida0		(validSalida0),
+			  .validSalida1		(validSalida1),
 			  .validEntrada0	(validEntrada0),
 			  .validEntrada1	(validEntrada1),
 			  .validEntrada2	(validEntrada2),
@@ -75,9 +77,7 @@ module banco_mux;
 			  .reset		(reset),
 			  // Inputs
 			  .Salida_estructural	(Salida_estructural[7:0]),
-			  .Salida_conductual	(Salida_conductual[7:0]),
-			  .validSalida0		(validSalida0),
-			  .validSalida1		(validSalida1));
+			  .Salida_conductual	(Salida_conductual[7:0]));
 
 endmodule
 

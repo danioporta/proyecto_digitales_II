@@ -1,7 +1,7 @@
 module Probador_mux(input [7:0] Salida_estructural,
                     input [7:0] Salida_conductual,
-						input validSalida0,
-						input validSalida1,
+						output reg validSalida0,
+						output reg validSalida1,
 						output reg  validEntrada0,
                         output reg  validEntrada1,
                         output reg  validEntrada2,
@@ -23,6 +23,9 @@ module Probador_mux(input [7:0] Salida_estructural,
     {Entrada1} <= 8'h00;
     {Entrada2} <= 8'h00;
     {Entrada3} <= 8'h00;
+    {validSalida0} <= 1;
+    {validSalida1} <= 1;
+ 
  
 	
 	@(posedge clk_2f);
