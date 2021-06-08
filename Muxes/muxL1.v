@@ -4,7 +4,7 @@
 module muxL1(
     output  [7:0]Salida0,
     output [7:0]Salida1,
-    input validsalida0,
+    output validsalida0,
     output validsalida1,
     input [7:0]Entrada0,
     input [7:0]Entrada1,
