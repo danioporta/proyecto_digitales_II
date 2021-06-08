@@ -9,7 +9,7 @@ module muxL2(
     input [7:0]Entrada1,
     input validEntrada0,
     input validEntrada1,
-    input clk_4f,
+    input clk_2f,
     input reset);
 
     mux2x1 mux1(
@@ -21,7 +21,7 @@ module muxL2(
         .Entrada1   (Entrada1[7:0]),
         .validEntrada0   (validEntrada0),
         .validEntrada1    (validEntrada1),
-        .clk       (clk_4f),
+        .clk       (clk_2f),
         .reset     (reset)
     );
 endmodule
